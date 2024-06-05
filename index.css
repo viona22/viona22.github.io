@@ -6,7 +6,7 @@
     top: 0;
     left: 0;
     z-index: -1;
- } 
+ }
 
  html {
     height: 100%;
@@ -17,8 +17,9 @@
     justify-content: space-around;
     flex-direction: column;
     height: 100%;
+    width: 100%;
     margin: 0;
- } 
+ }
 
  #header {
     font-family: 'VALORANT', sans-serif;
@@ -29,7 +30,7 @@
     text-shadow: 2px 8px rgb(46, 33, 48);
     text-decoration: underline;
     text-decoration-thickness: 1.3px;
-    text-decoration-color:rgba(189, 174, 192, 0.603) ;
+    text-decoration-color: rgba(189, 174, 192, 0.603);
     text-underline-offset: 15px;
     display: flex;
  }
@@ -38,7 +39,7 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
-    margin-left: 35px;;
+    margin-left: 35px;
  }
 
  #agents-buttons-wrapper {
@@ -70,16 +71,16 @@
     color: rgb(255, 255, 255);
     cursor: pointer;
     transition: 0.3s ease;
-    
+
  }
 
  .roll-buttons:hover {
-     background-color: #565a56;
+    background-color: #565a56;
  }
- 
+
  .roll-buttons:active {
-     background-color: #7b6280;
-     transform: translateY(4px);
+    background-color: #7b6280;
+    transform: translateY(4px);
  }
 
  #agents-wrapper {
@@ -96,25 +97,62 @@
     z-index: 200;
     transition: 0.35s ease;
  }
+
  .agents:hover {
     background-color: #7b6280;
     cursor: pointer;
  }
- 
+
  .agents-background {
     background-color: rgba(39, 34, 39, 0.637);
     opacity: 0.8;
     z-index: 100;
     width: 75px;
     height: 75px;
-    position:absolute;
+    position: absolute;
  }
+
  .agents-wrapper {
     width: 75px;
-    height: 75px; 
+    height: 75px;
     z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
  }
 
+ @media (max-width: 1000px) {
+   body {
+      justify-content: flex-start;
+      align-items: center;
+   }
+
+   #elements-wrapper {
+      margin: 0;
+   }
+
+   #header {
+      margin-top: 30px;
+      font-size: 50px;
+      opacity: 1;
+      text-decoration: none;
+      text-align: center;
+      justify-content: center;
+   }
+
+   #buttons-wrapper {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   #agents-buttons-wrapper {
+      align-items: center;
+   }
+
+   #agents-wrapper {
+      width: auto;
+      justify-content: center;
+      margin-bottom: 30px;
+   }
+
+ }
