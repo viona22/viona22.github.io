@@ -1,33 +1,36 @@
 var i = 0;
 var myInterval;
-    document.addEventListener('DOMContentLoaded', () => {
-        
-        const button = document.getElementById('randomAgentButton');
-    
-        button.addEventListener('click', () => {
-            clearInterval(myInterval);
-            i = 0;
-            myInterval = setInterval(getRandomAgent, 170);
-         });
-   });
+document.addEventListener('DOMContentLoaded', () => {
 
-function getRandomAgent(){
+    const button = document.getElementById('randomAgentButton');
+
+    button.addEventListener('click', () => {
+        clearInterval(myInterval);
+        i = 0;
+        myInterval = setInterval(getRandomAgent, 170);
+    });
+});
+
+function getRandomAgent() {
+    const agentsWrapper = document.getElementById('agents-wrapper');
+    agentsWrapper.scrollIntoView({ behavior: 'smooth' });
+
     const agents = document.querySelectorAll('.agents');
     const randomIndex = Math.floor(Math.random() * agents.length);
     const randomAgent = agents[randomIndex];
 
     agents.forEach(agent => {
         if (agent === randomAgent) {
-            agent.style.opacity = '1'; 
-            agent.parentElement.style.boxShadow = '0 0 5px 5px #502956'; 
-            }
-            else {
-                agent.style.opacity = '0.3'; 
-                agent.parentElement.style.boxShadow = 'none'; 
-            }
-        });
+            agent.style.opacity = '1';
+            agent.parentElement.style.boxShadow = '0 0 5px 5px #502956';
+        }
+        else {
+            agent.style.opacity = '0.3';
+            agent.parentElement.style.boxShadow = 'none';
+        }
+    });
     i++;
-    if(i > 10)
+    if (i > 10)
         clearInterval(myInterval);
 }
 
@@ -52,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function getRandomFiveAgents() {
+    const agentsWrapper = document.getElementById('agents-wrapper');
+    agentsWrapper.scrollIntoView({ behavior: 'smooth' });
     const agents = document.querySelectorAll('.agents');
     const randomAgents = [];
 
